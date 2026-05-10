@@ -16,9 +16,10 @@ PORT="${PORT:-8000}"
 SERVED_NAME="${SERVED_NAME:-gemma-4-31b-it-nvfp4}"
 
 TP_SIZE="${TP_SIZE:-1}"
-# Native context goes up to 256K per the NVIDIA card; keep 32K default to
-# bound KV-cache on GB10. Bump for long-doc / video workloads.
-MAX_MODEL_LEN="${MAX_MODEL_LEN:-32768}"
+# Native context goes up to 256K per the NVIDIA card; 64K default leaves
+# headroom for typical chat (24K+ input + 8K output) without blowing up
+# KV-cache on GB10. Bump for long-doc / video workloads.
+MAX_MODEL_LEN="${MAX_MODEL_LEN:-65536}"
 MAX_NUM_SEQS="${MAX_NUM_SEQS:-128}"
 # Must be >= max_tokens_per_mm_item (2496 for Gemma-4 vision tower); chunked MM
 # input is force-disabled for multimodal-bidirectional attention models, so each

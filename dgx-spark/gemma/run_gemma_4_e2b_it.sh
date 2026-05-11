@@ -22,7 +22,7 @@ MAX_NUM_BATCHED_TOKENS="${MAX_NUM_BATCHED_TOKENS:-8192}"
 # GB10 (and other Grace-Blackwell unified-memory parts) share VRAM with host
 # processes, so the practical free fraction at startup is well under 0.9.
 # Datacenter H100/H200 users can override with GPU_MEM_UTIL=0.90.
-GPU_MEM_UTIL="${GPU_MEM_UTIL:-0.65}"
+GPU_MEM_UTIL="${GPU_MEM_UTIL:-0.5}"
 DTYPE="${DTYPE:-bfloat16}"
 
 # E2B model card lists Text, Image, Audio (no video). Drop audio if unused.

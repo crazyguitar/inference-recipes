@@ -10,7 +10,7 @@ PORT="${PORT:-8000}"
 SERVED_NAME="${SERVED_NAME:-gemma-4-26b-a4b-it}"
 
 TP_SIZE="${TP_SIZE:-1}"
-MAX_MODEL_LEN="${MAX_MODEL_LEN:-32768}"
+MAX_MODEL_LEN="${MAX_MODEL_LEN:-65536}"
 MAX_NUM_SEQS="${MAX_NUM_SEQS:-128}"
 # Must be >= max_tokens_per_mm_item (2496 for Gemma-4 vision tower); chunked MM
 # input is force-disabled for multimodal-bidirectional attention models, so each
